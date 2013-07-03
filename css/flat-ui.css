@@ -1035,9 +1035,8 @@ h6 {
   padding-left: 22px;
 }
 .navbar-inverse .nav > li > a {
-  font-size: 16.002px;
-  /* 16px */
-
+  font-size: .8em;
+  text-transform: uppercase;
   border-bottom: 2px solid #2c3e50;
   border-left: 2px solid #2c3e50;
   color: #ffffff;
