@@ -635,6 +635,19 @@ h6 {
 .btn.btn-large > [class^="fui-"].pull-right {
   margin-right: -2px;
 }
+.btn.btn-huge {
+  font-size: 1.5em;
+  font-family: 'aleo', sans-serif;
+  text-transform: capitalize;
+  line-height: 1.3em;
+  padding: 1em 1.2em;
+}
+.btn.btn-huge > [class^="fui-"] {
+  top: 0;
+}
+.btn.btn-huge > [class^="fui-"].pull-right {
+  margin-right: -2px;
+}
 .btn.btn-primary {
   background-color: #537daa;
 }
@@ -777,7 +790,7 @@ h6 {
 }
 .btn-mini .caret,
 .btn-small .caret,
-.btn-large .caret {
+.btn-large .caret, {
   margin-top: 7px;
 }
 .btn-large .caret {
@@ -856,24 +869,38 @@ h6 {
   display: block\9;
 }
 .navbar .nav > li > ul li ul {
-  left: 100%;
+  left: 105%;
+}
+.navbar .nav > li > ul li ul:before {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: -3px;
+  border-style: solid;
+  border-width: 8px 8px 8px 0;
+  border-color: transparent #111111;
+  display: block;
+  width: 0;
+  z-index: 1;
 }
 .navbar .nav > li > a {
-  color: #526476;
+  color: #ffffff;
   font-weight: 700;
   font-size: 14.994px;
   text-shadow: none;
-  -webkit-transition: background-color .25s, color .25s, border-bottom-color .25s;
-  -moz-transition: background-color .25s, color .25s, border-bottom-color .25s;
-  -o-transition: background-color .25s, color .25s, border-bottom-color .25s;
-  transition: background-color .25s, color .25s, border-bottom-color .25s;
-  -webkit-backface-visibility: hidden;
+    transition:opacity, .25s;
+  -webkit-transition:opacity, .25s;
+  -moz-transition:opacity, .25s;
+  -o-transition:opacity, .25s;
 }
 .navbar .nav > li > a:hover,
 .navbar .nav > li > a:focus {
-  background-color: #537daa;
   border-radius: 2px;
-  color: #ffffff;
+  opacity:.5;
+  transition:opacity, .25s;
+  -webkit-transition:opacity, .25s;
+  -moz-transition:opacity, .25s;
+  -o-transition:opacity, .25s;
 }
 .navbar .nav > li > a[class*="fui-"] {
   font-size: 24px;
@@ -887,6 +914,20 @@ h6 {
 }
 .navbar .nav > li > a > [class*="fui-"] + * {
   margin-left: 1em;
+}
+.navbar .nav .caret{
+  border-bottom-color:white;
+  border-top-color:white;
+  top: 5px;
+  left: -2px;
+  position: relative;
+}
+.navbar .nav ul li .caret{
+  float:right;
+  transform:rotate(-90deg);
+  -webkit-transform:rotate(-90deg);
+  -moz-transform:rotate(-90deg);
+  -o-transform:rotate(-90deg);
 }
 .navbar .nav ul {
   border-radius: 4px;
@@ -1005,12 +1046,14 @@ h6 {
   color: #ffffff;
   margin: 7px 10px;
 }
-.navbar-inverse .nav > li.active > a,
-.navbar-inverse .nav > li.active > a:hover,
-.navbar-inverse .nav > li.active > a:focus {
+.navbar-inverse .nav > li.active{
   background-color: #537daa;
   border-left: none;
   border-radius: 2px;
+}
+.navbar-inverse .nav > li.active > a,
+.navbar-inverse .nav > li.active > a:hover,
+.navbar-inverse .nav > li.active > a:focus {
   color: #ffffff;
   padding-left: 14px;
   -webkit-box-shadow: none;
@@ -1036,7 +1079,7 @@ h6 {
   height: 40px;
   width:40px;
   padding: 0;
-  left:5px;
+  left:-7px;
 }
 
 .navbar-inverse .nav > li.notifications label{
@@ -1114,6 +1157,7 @@ h6 {
 
 .navbar-inverse .nav > li.notifications .content-tab ul{
   width:300px;
+  top:100%;
 }
 
 .navbar-inverse .nav > li.notifications .content-tab ul:before {
@@ -1145,11 +1189,13 @@ h6 {
 .navbar-inverse .nav > li.notifications .content-tab ul li i{
   float: left;
   font-size: 14px;
-  margin: 13px 1px;
+  margin: 13px;
   color: #537DAA;
   background-color: #fff;
   border-radius: 50%;
   padding: 6px;
+  position: relative;
+  z-index: 5;
 }
 .navbar-inverse .nav > li.notifications [type=radio]:checked ~ label{
   z-index: 2;
